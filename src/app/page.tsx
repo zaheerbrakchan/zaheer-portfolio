@@ -26,9 +26,10 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
             Zaheer Abass
           </h1>
-          <p className="mt-3 text-lg text-slate-700">
-            AI Engineer & Full-Stack Developer — building scalable backend systems and LLM-powered products.
-          </p>
+<p className="mt-3 text-lg text-slate-700">
+  AI Engineer & Full-Stack Developer — crafting scalable backend systems and intelligent LLM-powered solutions.
+</p>
+
 
 <div className="mt-6 flex flex-wrap justify-center gap-4">
   <Link
@@ -54,11 +55,19 @@ export default function Home() {
         transition={{ delay: 0.5, duration: 0.8 }}
         className="mt-16 text-left"
       >
-        <SectionTitle title="Summary" />
-        <p className="text-slate-700 leading-relaxed text-lg mt-3">
-          IIT graduate with 5 years of experience — 3 years in full-stack development (Java Spring Boot, Vue.js)
-          and 2 years focused on AI engineering (Python, LangChain, FastAPI, Azure OpenAI, RAG, semantic search).
-        </p>
+<SectionTitle title="Summary" />
+<p className="text-slate-700 leading-relaxed text-lg mt-3">
+IIT graduate with 5 years of experience in applied AI and backend engineering. 
+For the past 2 years, I’ve focused on building intelligent automation systems — including RAG pipelines, semantic search, 
+document understanding, and conversational AI — using Python, LangChain, and Azure OpenAI. 
+Earlier, I spent 3 years developing scalable microservice-based platforms with Java Spring Boot and Vue.js.
+
+</p>
+<p className="text-slate-700 leading-relaxed text-lg mt-4">
+  Passionate about bridging AI research with production systems — I design practical,
+  reliable, and maintainable solutions that make complex automation accessible.
+</p>
+
       </motion.div>
     </section>
   );

@@ -1,8 +1,23 @@
-// src/app/skills/page.tsx
 "use client";
 import { motion } from "framer-motion";
-import skills from "@/data/skills";
 import SectionTitle from "@/components/SectionTitle";
+
+const groupedSkills = {
+  "AI & Automation": [
+    "LangChain", "RAG", "Azure OpenAI", "Hugging Face", "Prompt Engineering",
+    "Semantic Search", "OCR", "NLP", "n8n", "VAPI", "Twilio", "webhook",
+  ],
+  "Backend & Systems": [
+    "Python", "FastAPI", "Java", "Spring Boot", "REST APIs",
+    "Kafka", "Postgres", "Redis", "Elasticsearch", "SQL",
+  ],
+  "DevOps & Tools": [
+    "Docker", "Git", "Linux",
+  ],
+  "Frontend & Type Systems": [
+    "TypeScript", "React", "JavaScript", "HTML/CSS",
+  ],
+};
 
 export default function SkillsPage() {
   return (
@@ -12,21 +27,28 @@ export default function SkillsPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <SectionTitle title="Skills" />
+        <SectionTitle title="Tech Stack & Skills" />
 
         <p className="text-slate-700 mb-6 text-lg">
-          A mix of backend engineering, AI integration, and modern development tools I use daily to build scalable, intelligent systems.
+          A blend of AI engineering, backend systems, and automation tools I use to design scalable, intelligent, and production-ready solutions.
         </p>
 
-        <div className="flex flex-wrap gap-3 mt-4">
-          {skills.map((s) => (
-            <motion.span
-              key={s}
-              whileHover={{ scale: 1.08 }}
-              className="px-4 py-1.5 bg-gradient-to-r from-indigo-50 to-purple-50 text-slate-800 border border-slate-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition"
-            >
-              {s}
-            </motion.span>
+        <div className="space-y-8 mt-6">
+          {Object.entries(groupedSkills).map(([category, skills]) => (
+            <div key={category}>
+              <h3 className="text-indigo-600 font-semibold text-lg mb-3">{category}</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((s) => (
+                  <motion.span
+                    key={s}
+                    whileHover={{ scale: 1.08 }}
+                    className="px-4 py-1.5 bg-gradient-to-r from-indigo-50 to-purple-50 text-slate-800 border border-slate-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition"
+                  >
+                    {s}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </motion.div>

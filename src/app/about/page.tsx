@@ -1,4 +1,3 @@
-// src/app/about/page.tsx
 "use client";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
@@ -14,13 +13,20 @@ export default function About() {
       >
         <SectionTitle title="About Me" />
         <p className="text-lg leading-relaxed text-slate-700 mb-6">
-          I specialize in building <span className="font-semibold text-slate-900">robust backend systems</span> and
-          integrating them with modern <span className="font-semibold text-indigo-600">AI-driven workflows</span> — including
-          RAG pipelines, document understanding, and production-grade APIs.
+          I’m an engineer focused on building <span className="font-semibold text-slate-900">scalable backend systems </span> 
+           and <span className="font-semibold text-indigo-600">AI-driven workflows</span>. 
+          My work spans across areas like conversational AI , RAG pipelines, hybrid search, and document understanding
+           combining intelligence with reliable system design.
           <br />
           <br />
-          I’m passionate about solving real-world problems like invoice OCR, clinical QA, and hybrid search systems — 
-          and turning them into <span className="text-slate-900 font-semibold">scalable, reliable AI products</span>.
+          I enjoy designing <span className="font-semibold text-slate-900"> production-ready architectures </span> 
+          that connect data, automation, and language models through clean, maintainable APIs. 
+          Whether it's improving system scalability, automating operations, or integrating conversational logic, 
+          I focus on delivering practical and efficient solutions.
+          <br />
+          <br />
+          I’m passionate about creating <span className="font-semibold text-slate-900">AI systems that work in the real world </span>
+          systems that understand, respond, and evolve to make everyday workflows smarter and faster.
         </p>
       </motion.div>
 
@@ -33,12 +39,12 @@ export default function About() {
         <SectionTitle title="Experience Snapshot" />
         <ul className="list-disc ml-6 space-y-3 text-slate-700 text-lg">
           <li>
-            <span className="font-semibold text-slate-900">AI Engineer</span> — Building
-            LLM-based automation and RAG systems (2023–Present)
+            <span className="font-semibold text-slate-900">AI Engineer</span> — 
+            Building intelligent backend and automation systems powered by LLMs, RAG, and conversational AI (2023–Present)
           </li>
           <li>
-            <span className="font-semibold text-slate-900">Full-stack Developer</span> — Java Spring Boot, Vue.js,
-            Microservices (2020–2023)
+            <span className="font-semibold text-slate-900">Full-stack Developer</span> — 
+            Developed scalable microservices and REST APIs using Java Spring Boot, PostgreSQL, and Vue.js (2020–2023)
           </li>
         </ul>
       </motion.div>
