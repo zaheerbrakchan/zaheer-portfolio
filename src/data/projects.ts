@@ -21,7 +21,7 @@ const projects = [
     "Python",
     "Railway"
   ],
-  github: "https://github.com/zaheerbrakchan/healthcare-agent-system", 
+  github: "https://github.com/zaheerbrakchan/healthcare-agent-context", 
   live: "https://healthcare-agent-context-production.up.railway.app/", 
   youtube: "https://www.youtube.com/watch?v=uP_ahcpJuKM",
 },
