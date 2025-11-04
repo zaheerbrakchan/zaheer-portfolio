@@ -4,18 +4,26 @@ import SectionTitle from "@/components/SectionTitle";
 
 const groupedSkills = {
   "AI & Automation": [
-    "LangChain", "RAG", "Azure OpenAI", "Hugging Face", "Prompt Engineering",
-    "Semantic Search", "OCR", "NLP", "n8n", "VAPI", "Twilio", "webhook",
+    "LangChain", "LangGraph", "LangChain4j", "RAG", "Azure OpenAI", "Hugging Face",
+    "Prompt Engineering", "Semantic Search", "Azure Cognitive Search",
+    "Azure Document Intelligence", "OCR", "NLP", "n8n", "VAPI", "Twilio", "Webhook",
   ],
+
   "Backend & Systems": [
     "Python", "FastAPI", "Java", "Spring Boot", "REST APIs",
     "Kafka", "Postgres", "Redis", "Elasticsearch", "SQL",
   ],
+
+  "CS Core": [
+    "Data Structures & Algorithms",
+  ],
+
   "DevOps & Tools": [
     "Docker", "Git", "Linux",
   ],
+
   "Frontend & Type Systems": [
-    "TypeScript", "React", "JavaScript", "HTML/CSS",
+    "TypeScript", "React", "Next.js", "Vue.js", "jQuery", "JavaScript", "HTML/CSS",
   ],
 };
 
