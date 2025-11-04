@@ -14,17 +14,21 @@ const groupedSkills = {
     "Kafka", "Postgres", "Redis", "Elasticsearch", "SQL",
   ],
 
+    "Frontend & Type Systems": [
+    "TypeScript", "React", "Next.js", "Vue.js", "jQuery", "JavaScript", "HTML/CSS",
+  ],
+
+    "DevOps & Tools": [
+    "Docker", "Git", "Linux",
+  ],
+
   "CS Core": [
     "Data Structures & Algorithms",
   ],
 
-  "DevOps & Tools": [
-    "Docker", "Git", "Linux",
-  ],
 
-  "Frontend & Type Systems": [
-    "TypeScript", "React", "Next.js", "Vue.js", "jQuery", "JavaScript", "HTML/CSS",
-  ],
+
+
 };
 
 export default function SkillsPage() {
