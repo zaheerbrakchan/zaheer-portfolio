@@ -2,6 +2,7 @@
 "use client";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
+import VisitorCounter from "@/components/VisitorCounter";
 import Link from "next/link";
 
 export default function Home() {
@@ -20,8 +21,6 @@ export default function Home() {
 />
 
 
-
-
         <div>
           <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
             Zaheer Abass
@@ -30,6 +29,7 @@ export default function Home() {
   AI Engineer & Full-Stack Developer — crafting scalable backend systems and intelligent LLM-powered solutions.
 </p>
 
+<VisitorCounter />
 
 <div className="mt-6 flex flex-wrap justify-center gap-4">
   <Link
