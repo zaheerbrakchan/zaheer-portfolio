@@ -1,9 +1,11 @@
 // src/components/Footer.tsx
 export default function Footer() {
   return (
-    <footer className="border-t mt-12">
-      <div className="container mx-auto px-4 py-6 text-sm text-slate-600">
-        © {new Date().getFullYear()} Zaheer Abass — Built with Next.js
+    <footer className="border-t border-white/5 mt-20 bg-black/20">
+      <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+        <p className="text-sm text-gray-500 tracking-wide">
+          © {new Date().getFullYear()} Zaheer Abass — Artificial Intelligence Engineer
+        </p>
       </div>
     </footer>
   );

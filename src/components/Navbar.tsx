@@ -8,36 +8,35 @@ export default function Navbar() {
   const pathname = usePathname();
   const links = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/about", label: "Experience" },
     { href: "/projects", label: "Projects" },
     { href: "/skills", label: "Skills" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-slate-800 hover:text-slate-900">
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+        <Link href="/" className="text-xl font-bold tracking-tight hover:opacity-80 transition-opacity">
+          <span className="bg-gradient-to-r from-ai-cyan to-ai-violet bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
             Zaheer Abass
           </span>
         </Link>
-        <div className="flex gap-6 text-slate-700 font-medium">
+        <div className="flex gap-8 text-gray-300 font-medium text-sm tracking-wide">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
-              <motion.div key={link.href} whileHover={{ scale: 1.05 }}>
+              <motion.div key={link.href} whileHover={{ y: -2 }}>
                 <Link
                   href={link.href}
-                  className={`relative pb-1 hover:text-indigo-600 transition ${
-                    active ? "text-indigo-600" : ""
-                  }`}
+                  className={`relative pb-1 transition-colors duration-300 ${active ? "text-white" : "hover:text-ai-cyan"
+                    }`}
                 >
                   {link.label}
                   {active && (
                     <motion.span
                       layoutId="underline"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600"
+                      className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-ai-cyan shadow-[0_0_10px_rgba(0,240,255,0.7)]"
                     />
                   )}
                 </Link>

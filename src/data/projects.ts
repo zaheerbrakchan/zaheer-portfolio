@@ -1,40 +1,49 @@
 const projects = [
   {
+    id: 8,
+    title: "AI-Powered Voice-Based Hospital Event & Recovery Follow-up System",
+    description:
+      "Designed and built an end-to-end full-stack AI system that automates post-surgery and hospital event follow-up calls using intelligent voice agents. Features dynamic variable injection, intelligent resume logic, and n8n webhook orchestration.",
+    stack: ["Next.js", "Node.js", "PostgreSQL", "VAPI", "Twilio", "n8n", "ElevenLabs", "Webhooks"],
+    github: "https://github.com/zaheerbrakchan/internal-project",
+    isPrivate: true,
+  },
+  {
     id: 1,
     title: "AI-Powered Conversational Appointment Assistant",
     description:
       "Developed a telephonic AI agent using Spring Boot, Twilio, and n8n to schedule patient appointments via natural conversation, integrating live slot management, confirmations, and reminders.",
     stack: ["Java", "Spring Boot", "PostgreSQL", "Redis", "Twilio", "n8n"],
     github: 'https://github.com/<your-username>/clinicalbert-qa',
-     isPrivate: true,
+    isPrivate: true,
   },
-    {
-  id: 2,
-  title: "Healthcare Agent System – Large Context Handling in Agentic Systems",
-  description:
-    "Designed a multi-agent healthcare system that enables seamless context sharing between appointment and pre-assessment agents. Implemented dynamic token-aware context management, chunked tool output handling, and adaptive memory persistence to overcome LLM context limits.",
-  stack: [
-    "FastAPI",
-    "OpenAI API",
-    "LangChain",
-    "PostgreSQL (Supabase)",
-    "Python",
-    "Railway"
-  ],
-  github: "https://github.com/zaheerbrakchan/healthcare-agent-context", 
-  live: "https://healthcare-agent-context-production.up.railway.app/", 
-  youtube: "https://www.youtube.com/watch?v=uP_ahcpJuKM",
-},
+  {
+    id: 2,
+    title: "Healthcare Agent System – Large Context Handling in Agentic Systems",
+    description:
+      "Designed a multi-agent healthcare system that enables seamless context sharing between appointment and pre-assessment agents. Implemented dynamic token-aware context management, chunked tool output handling, and adaptive memory persistence to overcome LLM context limits.",
+    stack: [
+      "FastAPI",
+      "OpenAI API",
+      "LangChain",
+      "PostgreSQL (Supabase)",
+      "Python",
+      "Railway"
+    ],
+    github: "https://github.com/zaheerbrakchan/healthcare-agent-context",
+    live: "https://healthcare-agent-context-production.up.railway.app/",
+    youtube: "https://www.youtube.com/watch?v=uP_ahcpJuKM",
+  },
   {
     id: 3,
     title: "Automated GRN Processing System",
     description:
       "Built an AI-OCR backend to extract invoice data from 500+ vendor formats with 95% accuracy, automating warehouse GRN entries using Java, Kafka, and Azure Document Intelligence.",
     stack: ["Java", "Spring Boot", "Kafka", "Azure OCR", "PostgreSQL"],
-     github: 'https://github.com/<your-username>/clinicalbert-qa',
-      isPrivate: true,
+    github: 'https://github.com/<your-username>/clinicalbert-qa',
+    isPrivate: true,
   },
-    {
+  {
     id: 4,
     title: "QuickPoll – Real-Time Opinion Polling Platform",
     description:
@@ -50,8 +59,8 @@ const projects = [
     description:
       "Designed a secure NLQ engine for EMR databases using LangChain, Azure OpenAI, and FastAPI — enabling doctors to query structured data in plain English.",
     stack: ["Python", "LangChain", "Azure OpenAI", "FastAPI", "PostgreSQL"],
-     github: 'https://github.com/zaheerbrakchan/LinguaQuery',
-     youtube: 'https://www.youtube.com/watch?v=qB3gShilhFI',
+    github: 'https://github.com/zaheerbrakchan/LinguaQuery',
+    youtube: 'https://www.youtube.com/watch?v=qB3gShilhFI',
   },
   {
     id: 6,
@@ -59,8 +68,8 @@ const projects = [
     description:
       "Developed AI pipelines using Whisper and RAG to transcribe consultations and generate structured EHR entries and discharge summaries, deployed through Spring Boot REST APIs.",
     stack: ["Python", "Whisper", "RAG", "Spring Boot", "FastAPI"],
-     github: 'https://github.com/<your-username>/clinicalbert-qa',
-      isPrivate: true,
+    github: 'https://github.com/<your-username>/clinicalbert-qa',
+    isPrivate: true,
   },
   {
     id: 7,
@@ -68,8 +77,8 @@ const projects = [
     description:
       "Implemented real-time RAG pipelines that deliver top-5 patient insights before appointments, improving decision-making and clinician efficiency.",
     stack: ["FastAPI", "PostgreSQL", "Kafka", "LangChain", "RAG"],
-     github: 'https://github.com/<your-username>/clinicalbert-qa',
-      isPrivate: true,
+    github: 'https://github.com/<your-username>/clinicalbert-qa',
+    isPrivate: true,
   }
 
 ];
