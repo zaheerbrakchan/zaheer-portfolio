@@ -5,7 +5,7 @@ import './globals.css';
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Zaheer Abass • AI Engineer',
@@ -21,9 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main className="container mx-auto px-4 py-12 flex-1 relative z-10">
             {children}
-            <Analytics />
           </main>
           <Footer />
+          <Analytics />
         </div>
       </body>
     </html>
