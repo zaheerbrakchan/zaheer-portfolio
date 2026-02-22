@@ -41,7 +41,7 @@ export default function ProjectsPage() {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             className="h-full"
           >
-            <ProjectCard project={project} />
+            <ProjectCard project={project} index={index} />
           </motion.div>
         ))}
       </motion.div>
