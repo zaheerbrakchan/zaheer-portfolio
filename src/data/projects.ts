@@ -1,7 +1,41 @@
 const projects = [
   {
+    id: 9,
+    title: "Yuno AgentForge: AI Agent Orchestration Platform",
+    description: `Built Yuno AgentForge, an AI Agent Orchestration Platform to build, connect, run, and monitor teams of AI agents. Created for the Yuno AI Engineer hiring challenge.
+
+Features a visual Workflow Builder (ReactFlow), real-time Monitor with WebSocket log streaming, live Telegram integration (@yuno_agentforge_user_bot), and smart cross-workflow routing when users ask questions on the wrong workflow.
+
+Two pre-built workflows: Payment Failure Investigator (Orchestrator → Payment Analyst → Response Writer with lookup_payment & get_retry_recommendation tools) and Customer Support Router (Support Router → General Support Agent for FAQs).
+
+Example flow: a user asks "Why did my payment fail for order ORD-1002?" The orchestrator classifies intent, hands off to the Payment Analyst (tool calls against a SQLite knowledge base), then the Response Writer drafts the reply. Every agent start, tool call, result, and token count streams live to the Monitor panel.
+
+Backend: FastAPI + LangGraph executor, SQLite/SQLModel, OpenAI or Anthropic. Frontend: React + Vite Agent Studio (Dashboard, Agents, Workflows, Builder, Monitor, Channels). Deployed on Render with Docker Compose for local dev.`,
+    stack: [
+      "LangGraph",
+      "FastAPI",
+      "Python",
+      "React",
+      "Vite",
+      "ReactFlow",
+      "WebSockets",
+      "SQLModel",
+      "SQLite",
+      "OpenAI API",
+      "Anthropic API",
+      "LangChain Tools",
+      "Telegram Bots",
+      "TailwindCSS",
+      "Docker",
+      "Render",
+    ],
+    github: "https://github.com/zaheerbrakchan/yuno-agentforge",
+    live: "https://yuno-agentforge-frontend.onrender.com",
+    youtube: "https://www.youtube.com/watch?v=Zfq0U491H-Y",
+  },
+  {
     id: 8,
-    title: "Enterprise Conversational AI Platform for Automated Hospital Event & Post-Surgery Follow-up",
+    title: "Healthcare: Automated Outbound Voice & Post-Event Follow-up Platform",
     description: `
 Architected and deployed a production-grade, multi-tenant AI-powered voice automation platform that enables hospitals to automatically schedule and conduct post-surgery and clinical event follow-up calls using intelligent conversational agents.
 
@@ -14,7 +48,8 @@ Designed a robust backend architecture with normalized database schemas (patient
 Integrated Twilio telephony with region-specific voice synthesis (UK/India accents via ElevenLabs), conversational orchestration via VAPI, webhook-based automation via n8n, and real-time data persistence through event-driven APIs.
 
 Enabled call transcript storage, structured AI-generated clinical summaries, call recordings, and review workflows through a full-stack dashboard with human-in-the-loop validation.
-`, stack: [
+`,
+    stack: [
       "React",
       "Node.js",
       "Express",
@@ -27,24 +62,24 @@ Enabled call transcript storage, structured AI-generated clinical summaries, cal
       "Deepgram (Speech Processing)",
       "n8n (Workflow Automation)",
       "Webhooks",
-      "Multi-Tenant Architecture"
+      "Multi-Tenant Architecture",
     ],
     github: "https://github.com/zaheerbrakchan/internal-project",
     isPrivate: true,
   },
   {
     id: 1,
-    title: "Enterprise AI Voice Assistant for Real-Time Hospital Appointment Booking & Management",
+    title: "Healthcare: Real-Time Voice Assistant for Appointment Booking & Management",
     description: `
-Designed and deployed a production-grade conversational AI voice assistant that automates hospital appointment booking, rescheduling, cancellation, and doctor availability inquiries in real time — replacing traditional call-center workflows.
+Designed and deployed a production-grade conversational AI voice assistant that automates hospital appointment booking, rescheduling, cancellation, and doctor availability inquiries in real time, replacing traditional call-center workflows.
 
 Integrated Twilio telephony with VAPI-based conversational orchestration, ElevenLabs multi-region voice synthesis (UK/India accents), and Deepgram speech processing to deliver natural, human-like voice interactions at scale.
 
-Engineered deterministic conversational flows with tool-based execution logic, enabling the AI agent to securely communicate with existing hospital SaaS backend microservices via webhooks. Implemented real-time API integrations for patient lookup, doctor discovery, department navigation, slot availability checks, and instant booking confirmations — all without frontend dependency.
+Engineered deterministic conversational flows with tool-based execution logic, enabling the AI agent to securely communicate with existing hospital SaaS backend microservices via webhooks. Implemented real-time API integrations for patient lookup, doctor discovery, department navigation, slot availability checks, and instant booking confirmations, all without frontend dependency.
 
 Built secure patient identity verification using phone-number-based lookup and DOB validation. Designed intelligent fallback handling, slot unavailability negotiation, contextual query routing, and structured confirmation workflows.
 
-Architected the backend with scalable microservices (Spring Boot), PostgreSQL persistence, Redis caching, and workflow automation (n8n) to ensure low-latency responses and high concurrency. The system supports parallel call handling, eliminating wait times and significantly reducing operational load on human call centers.
+Architected the backend with scalable microservices (Spring Boot), PostgreSQL persistence, Redis caching, and workflow automation (n8n) to ensure low-latency responses and high concurrency. The system supports parallel call handling, cutting wait times from 30+ minutes to near-zero and significantly reducing operational load on human call centers.
 
 This platform transformed appointment management into a scalable, AI-driven, real-time conversational experience fully integrated with enterprise healthcare systems.
 `,
@@ -59,7 +94,7 @@ This platform transformed appointment management into a scalable, AI-driven, rea
       "ElevenLabs (Voice Synthesis)",
       "Deepgram (Speech Processing)",
       "Webhooks",
-      "n8n (Workflow Automation)"
+      "n8n (Workflow Automation)",
     ],
     github: "https://github.com/<your-username>/clinicalbert-qa",
     isPrivate: true,
@@ -81,13 +116,9 @@ Developed dynamic GST-based invoice pattern detection to apply vendor-specific c
 
 Architected a deterministic reconciliation engine in Spring Boot microservices to match extracted invoice items with master PO data using multi-stage filtering (cost price, HSN code) followed by semantic scoring for item-name resolution. Designed a confidence-based scoring system to identify the most accurate PO match.
 
-Integrated the pipeline with existing backend GRN services, enabling:
-• Automated GRN creation  
-• Partial extraction state handling  
-• Error recovery workflows  
-• Human-in-the-loop validation dashboard  
+Integrated the pipeline with existing backend GRN services, enabling automated GRN creation, partial extraction state handling, error recovery workflows, and a human-in-the-loop validation dashboard.
 
-Improved warehouse processing capacity from ~50 GRNs/day to 500+ GRNs/day with ~97% structured extraction accuracy, significantly reducing manual effort and increasing data reliability.
+Improved warehouse processing capacity from ~50 GRNs/day to 500+ GRNs/day (10x throughput) with 95%+ structured extraction accuracy, significantly reducing manual effort and increasing data reliability.
 
 This system transformed a manual, time-intensive warehouse operation into a scalable AI-driven document automation workflow.
 `,
@@ -102,14 +133,14 @@ This system transformed a manual, time-intensive warehouse operation into a scal
       "PostgreSQL",
       "Semantic Matching & Scoring Engine",
       "Outlook Mail Automation",
-      "Event-Driven Scheduling"
+      "Event-Driven Scheduling",
     ],
     github: "https://github.com/<your-username>/clinicalbert-qa",
     isPrivate: true,
   },
   {
     id: 3,
-    title: "Healthcare Agent System – Large Context Handling in Agentic Systems",
+    title: "Healthcare Agent System: Large Context Handling in Agentic Systems",
     description:
       "Designed a multi-agent healthcare system that enables seamless context sharing between appointment and pre-assessment agents. Implemented dynamic token-aware context management, chunked tool output handling, and adaptive memory persistence to overcome LLM context limits.",
     stack: [
@@ -118,16 +149,15 @@ This system transformed a manual, time-intensive warehouse operation into a scal
       "LangChain",
       "PostgreSQL (Supabase)",
       "Python",
-      "Railway"
+      "Railway",
     ],
     github: "https://github.com/zaheerbrakchan/healthcare-agent-context",
     live: "https://healthcare-agent-context-production.up.railway.app/",
     youtube: "https://www.youtube.com/watch?v=uP_ahcpJuKM",
   },
-
   {
     id: 4,
-    title: "QuickPoll – Real-Time Opinion Polling Platform",
+    title: "QuickPoll: Real-Time Opinion Polling Platform",
     description:
       "Built a real-time polling app where users can create polls, vote, and like with live updates using Next.js, FastAPI, WebSockets, PostgreSQL, and Redis. Includes JWT authentication and live broadcast updates.",
     stack: ["Next.js", "TypeScript", "FastAPI", "WebSockets", "PostgreSQL", "Redis"],
@@ -137,32 +167,31 @@ This system transformed a manual, time-intensive warehouse operation into a scal
   },
   {
     id: 5,
-    title: "EMR Natural Language Query Interface",
+    title: "Healthcare: EMR Natural Language Query Interface",
     description:
-      "Designed a secure NLQ engine for EMR databases using LangChain, Azure OpenAI, and FastAPI — enabling doctors to query structured data in plain English.",
+      "Designed a secure NLQ engine for EMR databases using LangChain, Azure OpenAI, and FastAPI, enabling doctors to query structured clinical data in plain English.",
     stack: ["Python", "LangChain", "Azure OpenAI", "FastAPI", "PostgreSQL"],
-    github: 'https://github.com/zaheerbrakchan/LinguaQuery',
-    youtube: 'https://www.youtube.com/watch?v=qB3gShilhFI',
+    github: "https://github.com/zaheerbrakchan/LinguaQuery",
+    youtube: "https://www.youtube.com/watch?v=qB3gShilhFI",
   },
   {
     id: 6,
-    title: "AI Charting & Discharge Automation",
+    title: "Healthcare: AI Charting & Discharge Automation",
     description:
       "Developed AI pipelines using Whisper and RAG to transcribe consultations and generate structured EHR entries and discharge summaries, deployed through Spring Boot REST APIs.",
     stack: ["Python", "Whisper", "RAG", "Spring Boot", "FastAPI"],
-    github: 'https://github.com/<your-username>/clinicalbert-qa',
+    github: "https://github.com/<your-username>/clinicalbert-qa",
     isPrivate: true,
   },
   {
     id: 7,
-    title: "AI-Powered Patient Summaries",
+    title: "Healthcare: AI-Powered Patient Summaries",
     description:
       "Implemented real-time RAG pipelines that deliver top-5 patient insights before appointments, improving decision-making and clinician efficiency.",
     stack: ["FastAPI", "PostgreSQL", "Kafka", "LangChain", "RAG"],
-    github: 'https://github.com/<your-username>/clinicalbert-qa',
+    github: "https://github.com/<your-username>/clinicalbert-qa",
     isPrivate: true,
-  }
-
+  },
 ];
 
 export default projects;

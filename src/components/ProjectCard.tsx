@@ -14,20 +14,19 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
     <>
       <article
         onClick={() => setIsOpen(true)}
-        className="cursor-pointer group relative rounded-2xl bg-white/[0.02] backdrop-blur-sm shadow-lg hover:shadow-[0_0_30px_rgba(0,240,255,0.07)] transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden"
+        className="cursor-pointer group relative glass-card rounded-2xl shadow-lg hover:shadow-[0_0_30px_rgba(99,102,241,0.12)] transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden"
       >
-        {/* Top accent gradient bar */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-ai-cyan via-ai-violet to-ai-blue opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="h-[2px] w-full bg-gradient-to-r from-accent-from to-accent-to opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Background glow effect on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-ai-cyan/5 to-ai-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-from/5 to-accent-to/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
 
         <div className="p-6 md:p-8 flex flex-col flex-1">
           {/* Header: index badge + title + status icon */}
           <div className="flex items-start justify-between gap-3 mb-4">
             <div className="flex items-center gap-3 min-w-0">
               {typeof index === 'number' && (
-                <span className="text-xs font-mono font-bold text-ai-cyan/50 bg-ai-cyan/5 border border-ai-cyan/10 rounded-md px-2 py-1 shrink-0">
+                <span className="text-xs font-mono font-bold text-accent-from/80 bg-accent-from/10 border border-accent-from/20 rounded-md px-2 py-1 shrink-0">
                   {String(index + 1).padStart(2, '0')}
                 </span>
               )}
@@ -40,7 +39,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                 <Lock size={14} />
               </div>
             ) : (
-              <div className="p-2 rounded-full bg-ai-cyan/10 border border-ai-cyan/20 text-ai-cyan shrink-0" title="Public Project">
+              <div className="p-2 rounded-full bg-accent-from/10 border border-accent-from/25 text-accent-from shrink-0" title="Public Project">
                 <Terminal size={14} />
               </div>
             )}
@@ -59,7 +58,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
               </span>
             ))}
             {remainingCount > 0 && (
-              <span className="text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-md bg-ai-violet/10 border border-ai-violet/20 text-ai-violet">
+              <span className="text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-md bg-accent-to/10 border border-accent-to/25 text-accent-to">
                 +{remainingCount} more
               </span>
             )}
@@ -72,7 +71,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                 href={project.github}
                 target="_blank"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-ai-cyan transition-colors"
+                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-accent-from transition-colors"
               >
                 <Github size={14} /> Code
               </a>
@@ -82,7 +81,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                 href={project.live}
                 target="_blank"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-ai-cyan transition-colors"
+                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-accent-from transition-colors"
               >
                 <ExternalLink size={14} /> Live
               </a>
@@ -92,14 +91,15 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                 href={project.youtube}
                 target="_blank"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-ai-violet transition-colors"
+                className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-accent-to transition-colors"
               >
                 <Youtube size={14} /> Demo
               </a>
             )}
             {project.isPrivate && (
-              <span className="flex items-center gap-1.5 text-xs text-gray-600 italic font-medium">
-                <Lock size={12} /> Internal
+              <span className="flex items-start gap-1.5 text-[10px] sm:text-xs text-gray-500 italic font-medium leading-snug">
+                <Lock size={12} className="shrink-0 mt-0.5" />
+                Production deployment. Architecture walkthrough available on request.
               </span>
             )}
           </div>
@@ -109,7 +109,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
       {/* Modal Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -124,10 +124,9 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative z-10 bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-10 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col"
+              className="relative z-10 bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-10 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col glass-card"
             >
-              {/* Top accent */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-ai-cyan via-ai-violet to-ai-blue rounded-t-3xl"></div>
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-from to-accent-to rounded-t-3xl" />
 
               <button
                 onClick={() => setIsOpen(false)}
@@ -143,7 +142,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                     <Lock size={20} />
                   </div>
                 ) : (
-                  <div className="p-2.5 rounded-full bg-ai-cyan/10 border border-ai-cyan/20 text-ai-cyan shrink-0" title="Public Project">
+                  <div className="p-2.5 rounded-full bg-accent-from/10 border border-accent-from/25 text-accent-from shrink-0" title="Public Project">
                     <Terminal size={20} />
                   </div>
                 )}
@@ -180,7 +179,7 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-ai-cyan/10 border border-ai-cyan/30 text-ai-cyan hover:bg-ai-cyan/20 active:scale-95 font-semibold transition-all"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent-from/10 border border-accent-from/30 text-accent-from hover:bg-accent-from/20 active:scale-95 font-semibold transition-all"
                   >
                     <ExternalLink size={20} /> Open Live Demo
                   </a>
@@ -190,15 +189,16 @@ export default function ProjectCard({ project, index }: { project: any; index?: 
                     href={project.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-ai-violet/10 border border-ai-violet/30 text-ai-violet hover:bg-ai-violet/20 active:scale-95 font-semibold transition-all"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent-to/10 border border-accent-to/30 text-accent-to hover:bg-accent-to/20 active:scale-95 font-semibold transition-all"
                   >
                     <Youtube size={20} /> Watch Video Demo
                   </a>
                 )}
                 {project.isPrivate && (
-                  <span className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/5 text-gray-400 font-medium italic cursor-not-allowed">
-                    <Lock size={20} /> Internal / Proprietary System
-                  </span>
+                  <p className="flex items-start gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 text-sm font-medium italic leading-relaxed">
+                    <Lock size={18} className="shrink-0 mt-0.5" />
+                    Production deployment. Architecture walkthrough available on request.
+                  </p>
                 )}
               </div>
             </motion.div>

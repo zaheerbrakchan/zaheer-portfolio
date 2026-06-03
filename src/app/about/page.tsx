@@ -1,111 +1,148 @@
-// src/app/about/page.tsx
 "use client";
-import { motion } from "framer-motion";
+
 import SectionTitle from "@/components/SectionTitle";
-import { Briefcase, Calendar, Terminal } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import { ABOUT_PARAGRAPHS } from "@/data/about";
+import { Briefcase, Calendar } from "lucide-react";
+
+const experiences = [
+  {
+    company: "Narayana Health",
+    role: "AI Engineer",
+    period: "Jan 2024 to Present",
+    highlight: true,
+    bullets: [
+      "Built production voice agent automating 500+ daily interactions with near-zero latency and live backend integration",
+      "Designed multi-tenant outbound AI platform with full scheduling, state management, and human review workflows",
+      "Built intelligent document pipeline achieving 10x throughput improvement and 95%+ extraction accuracy",
+      "Architected RAG pipeline for real-time context summarisation from unstructured records",
+      "Built natural language query interface enabling plain English queries on structured databases",
+      "Automated speech-to-record pipeline reducing manual documentation time from 10 min to a quick review",
+    ],
+    skills: [
+      "VAPI",
+      "Twilio",
+      "LangChain",
+      "FastAPI",
+      "Azure OpenAI",
+      "PostgreSQL",
+      "n8n",
+      "RAG",
+      "OCR",
+      "ElevenLabs",
+      "Deepgram",
+      "Node.js",
+      "Express.js",
+      "Whisper",
+      "Azure Document Intelligence",
+      "Azure Cognitive Search",
+      "Prisma",
+      "Redis",
+      "Next.js",
+      "TypeScript",
+      "Spring Boot",
+      "Python",
+    ],
+  },
+  {
+    company: "LTIMindTree",
+    role: "Software Engineer",
+    period: "Jul 2020 to Dec 2023",
+    highlight: false,
+    bullets: [
+      "Led backend for enterprise IT operations platform across 3 major product modules",
+      "Built shared Spring Boot framework that cut new service setup time significantly across the team",
+      "Developed Object Management module from scratch with search, filtering, and permission management",
+    ],
+    skills: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "ArangoDB",
+      "Vue.js",
+      "REST APIs",
+      "Microservices",
+      "MySQL",
+      "Keycloak",
+      "Elasticsearch",
+    ],
+  },
+];
 
 export default function About() {
-  const experiences = [
-    {
-      role: "AI Systems Engineer",
-      period: "2023 — Present",
-      description: "Architecting production-grade distributed AI systems powered by LLMs and advanced conversational AI agents. Designing scalable RAG pipelines, intelligent document processing, and semantic search infrastructures, seamlessly integrating AI into enterprise-scale architectures",
-      skills: [
-        "LLM Applications",
-        "Conversational AI & Voice Agents",
-        "Prompt Engineering",
-        "RAG & Semantic Search",
-        "Intelligent Document Processing (OCR)",
-        "AI Orchestration & Webhooks",
-        "Distributed Systems",
-        "Microservices Architecture",
-        "Event-Driven Systems (Kafka)",
-        "Vector Databases",
-        "Enterprise Backend Systems",
-        "Model Fine-Tuning (LoRA / QLoRA)",
-        "Cloud & Storage Services"
-      ],
-      icon: <Terminal className="w-5 h-5 text-ai-cyan" />,
-      highlight: true
-    },
-    {
-      role: "Full-Stack Software Engineer",
-      period: "2020 — 2023",
-      description: "Developed and maintained highly scalable microservices and RESTful APIs. Focused on system reliability, database optimization, and responsive frontend interfaces for enterprise platforms.",
-      skills: ["Java", "Spring Boot", "python", "Rest APIs", "Microservices", "System Design", "PostgreSQL", "ArangoDB", "Vue.js", "Html", "CSS", "JQuery",],
-      icon: <Briefcase className="w-5 h-5 text-gray-400" />,
-      highlight: false
-    }
-  ];
-
   return (
-    <section className="max-w-4xl mx-auto pt-8 pb-20 relative">
-      <div className="absolute top-0 left-[-10%] w-96 h-96 bg-ai-violet/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    <section className="page-section w-full pt-8 pb-20 relative px-0">
+      <div className="absolute top-0 left-0 w-full h-64 bg-accent-to/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-16"
-      >
-        <SectionTitle title="About & Experience" />
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 md:p-8 mt-8 shadow-xl backdrop-blur-sm relative overflow-hidden group hover:border-white/10 transition-colors duration-500">
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-ai-cyan/10 rounded-full blur-[80px] group-hover:bg-ai-cyan/20 transition-colors duration-700"></div>
-
-          <p className="text-lg leading-relaxed text-gray-300 font-light relative z-10">
-            I’m an engineer focused on building <span className="font-semibold text-white">scalable backend systems</span> and <span className="font-semibold text-ai-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">AI-driven workflows</span>.
-            My work spans across conversational AI, RAG pipelines, hybrid search, and document understanding—combining intelligence with reliable system design.
-            <br /><br />
-            I formulate <span className="font-semibold text-white">production-ready architectures</span> that connect data, automation, and language models through clean, maintainable APIs.
-            Whether optimizing system scale, automating operations, or integrating robust conversational logic, my primary goal is delivering practical and resilient solutions.
-          </p>
+      <ScrollReveal className="w-full">
+        <SectionTitle title="About Me" />
+        <div className="glass-card rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-14 mt-4 w-full">
+          <div className="space-y-6">
+            {ABOUT_PARAGRAPHS.map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-lg md:text-xl leading-relaxed text-gray-300 font-light text-left"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
-      </motion.div>
+      </ScrollReveal>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-      >
-        <h3 className="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-          <Briefcase className="w-6 h-6 text-ai-violet drop-shadow-[0_0_10px_rgba(138,43,226,0.6)]" />
-          Career Journey
+      <ScrollReveal className="mt-16 md:mt-20 w-full" delay={0.1}>
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 flex items-center gap-3">
+          <Briefcase className="w-6 h-6 text-accent-from" />
+          <span className="text-accent-gradient">Experience</span>
         </h3>
 
-        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-ai-violet before:via-ai-cyan/30 before:to-transparent">
+        <div className="relative pl-8 md:pl-10 space-y-12 before:absolute before:left-[11px] md:before:left-[15px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-accent-from before:via-accent-to/50 before:to-transparent w-full">
           {experiences.map((exp, index) => (
-            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div key={index} className="relative w-full">
+              <div
+                className={`absolute -left-8 md:-left-10 top-1 w-[22px] h-[22px] rounded-full border-4 border-background z-10 ${
+                  exp.highlight
+                    ? "bg-gradient-to-br from-accent-from to-accent-to ring-2 ring-accent-from/30"
+                    : "bg-white/10 border-white/20"
+                }`}
+              />
 
-              {/* Timeline dot */}
-              <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0a0a0a] bg-black shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-transform duration-300 group-hover:scale-110 ${exp.highlight ? 'ring-2 ring-ai-cyan ring-offset-2 ring-offset-[#0a0a0a] bg-white/5' : ''}`}>
-                {exp.icon}
-              </div>
-
-              {/* Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 shadow-lg group-hover:-translate-y-1">
-                <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-3 gap-2">
-                  <h4 className={`text-xl font-bold ${exp.highlight ? 'text-white' : 'text-gray-200'}`}>{exp.role}</h4>
-                  <span className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-ai-violet bg-ai-violet/10 border border-ai-violet/20 px-3 py-1.5 rounded-full w-fit">
+              <div className="glass-card rounded-2xl p-6 md:p-8 lg:p-10 hover:border-accent-from/25 transition-all duration-300 w-full">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white">{exp.company}</h4>
+                    <p className="text-accent-from font-medium mt-0.5 text-lg">{exp.role}</p>
+                  </div>
+                  <span className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-accent-to bg-accent-to/10 border border-accent-to/25 px-3 py-1.5 rounded-full w-fit shrink-0">
                     <Calendar className="w-3.5 h-3.5" />
                     {exp.period}
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5 text-justify">
-                  {exp.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {exp.skills.map((skill, i) => (
-                    <span key={i} className={`flex-grow flex items-center justify-center text-center text-[11px] sm:text-xs font-medium tracking-wide px-3 py-1.5 rounded-lg border transition-all duration-300 ${exp.highlight ? 'border-ai-cyan/20 bg-ai-cyan/[0.03] hover:bg-ai-cyan/[0.08] text-ai-cyan/90 hover:text-ai-cyan shadow-sm hover:shadow-[0_0_12px_rgba(0,240,255,0.15)]' : 'border-white/5 bg-white/[0.02] hover:bg-white/[0.06] text-gray-400 hover:text-gray-300'}`}>
+
+                <ul className="space-y-3 mb-6">
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className="text-gray-400 text-sm md:text-base leading-relaxed flex gap-2.5">
+                      <span className="text-accent-from mt-1.5 shrink-0">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                  {exp.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg border border-white/10 bg-black/30 text-gray-300 hover:border-accent-from/40 hover:text-white transition-colors"
+                    >
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
-
             </div>
           ))}
         </div>
-      </motion.div>
+      </ScrollReveal>
     </section>
   );
 }
